@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      .first-div {
+        background-color: aqua;
+      }
+      /* div {
+          background-color: salmon;
+      } */
+
+      .common {
+        padding: 20px;
+        border: 1px solid gray;
+        display: table;
+        background-color: salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>three ways to apply css style</h1>
+    <div id="first" class="first-div">hello world</div>
+    <div class="first-div">hello world2</div>
+    <h1>parent selector</h1>
+
+    <div id="grandparent" class="common">
+      grandparent
+      <div id="parent" class="common">
+        parent
+        <div id="child" class="common">child</div>
+      </div>
+    </div>
+    <h1>sibling selector</h1>
+    <div id="after">after</div>
+    <div id="before">before</div>
+    <div>between</div>
+    <label>first input</label>
+    <input />
+    <label>second input</label>
+    <input type="checkbox" />
+    <div class="test">test</div>
+    <h1>box model</h1>
+    <div
+      style="
+        margin: 20px;
+        padding: 20px;
+        border: solid gray 20px;
+        width: 120px;
+        height: 120px;
+        box-sizing: border-box;
+      "
+    >
+      box model
+    </div>
+
+    <h1>display</h1>
+    <div style="width: 100px; height: 100px">block</div>
+    <span
+      style="
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+      "
+      >inline</span
+    >
+    <span>inline2</span>
+
+    <div
+      style="
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        visibility: hidden;
+      "
+    >
+      should be hidden
+    </div>
+    <span>in between</span>
+
+    <div
+      style="display: none; width: 100px; height: 100px; background-color: aqua"
+    >
+      should be hidden
+    </div>
+    <span>at the end</span>
+
+    <!-- postion -->
+    <div
+      style="
+        position: relative;
+        width: 500px;
+        height: 500px;
+        padding: 100px;
+        background-color: bisque;
+      "
+    >
+      <div style="width: 500px; height: 500px; background-color: gray">
+        <div
+          style="
+          position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+          "
+        >
+          first child
+        </div>
+        <div style="background-color: brown; width: 100px; height: 100px">
+          second child
+        </div>
+      </div>
+    </div>
+
+    <!-- flex -->
+    <header style="flex-direction: row;display:flex; width:100%px; height:50px; background-color: salmon;align-items: center;justify-content: space-between;">
+        <a href="">HTML</a>
+        <a href="">CSS</a>
+        <a href="">JAVASCRIPT</a>
+        <a href="">SQL</a>
+    </header>
+  </body>
+</html>

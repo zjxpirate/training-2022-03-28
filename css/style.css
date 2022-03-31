@@ -1,0 +1,36 @@
+#first {
+    background-color:bisque;
+  }
+.first-div {
+  background-color: yellowgreen;
+}
+div {
+  background-color:blueviolet;
+}
+
+/* #grandparent #parent{
+    background-color: aqua;
+} */
+
+#grandparent > #child{
+    background-color: yellowgreen;
+}
+
+#grandparent, #child{
+    background-color: brown;
+}
+
+#before~#after{
+    background-color: aqua;
+}
+
+.test{
+    background-color: aqua;
+}
+div.test{
+    background-color: salmon;
+}
+
+
+
+
