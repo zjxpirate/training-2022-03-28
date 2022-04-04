@@ -463,40 +463,15 @@ symbol
 // foo(1,2,3)
 
 //spread operator
-function foo(...args){
-    console.log(args);
+// function foo(...args){
+//     console.log(args);
 
-}
+// }
 
-foo(1,2,3,4,5,6,7)
-
-
-
-
-
-
-
-
-
+// foo(1,2,3,4,5,6,7)
 
 
 //const c = {name:"jane", age:20};
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
 
 // const p = new Person('jojo', 18);
 
@@ -511,6 +486,429 @@ foo(1,2,3,4,5,6,7)
 //     console.log('this is my foreach');
 // }
 // console.log(arr);
+
+
+// const obj = {
+//     name:"adam",
+//     age:18,
+//     nested:{
+//         value:2
+//     }
+// }
+
+// // const obj1 = {...obj}//deep copy, but not anything nested
+// // console.log(obj1 === obj);
+// // console.log(obj1.nested === obj.nested);
+
+// const obj1 = obj; //shallow copy, they are piointing to the same reference
+
+// console.log(obj === obj1);
+
+// console.log(obj.nested === obj1.nested);
+
+// arrow function, standard function
+// standard function can do hoisting;
+//
+
+// foo();
+
+// function foo(){ //hoisting
+//     console.log("foo")
+// }
+
+
+// var foo2 = () => {
+//     console.log("foo2");
+// }
+
+
+//const foo = () => true;
+
+// const obj ={
+//     name:"adam",
+//     age:18,
+//     getAge:()=>{
+//         console.log(this);
+//     }
+// }
+
+
+// const obj1 = {
+//     name:"jane",
+//     age:20
+// }
+
+// obj1.getAge = obj.getAge
+
+// obj1.getAge();
+
+// const obj ={
+//     name:"adam",
+//     age:18,
+//     getAge:()=>{
+//         console.log(this); // window object, global object
+//     }
+// }
+
+//standard function: "this" is pointing to the object who calls the function
+//arrow function: "this" is inherited from where it is defined in the code context
+
+// const obj = {
+//     name:"adam",
+//     age:18,
+//     getAge: function(){
+//         console.log("from getage",this); // "this" is the obj
+//         const foo = () => {
+//             console.log("from arrow function",this); // "this" is the obj
+//         }
+//         foo();
+//     }
+// }
+
+// obj.getAge();
+
+// const obj = {
+//     name:"adam",
+//     age:18,
+//     getAge: function(){
+//         console.log("from getage",this); //obj
+//         function foo(){
+//             console.log("from arrow function",this); //undefined
+//         }
+//         foo();
+//     }
+// }
+
+// obj.getAge();
+
+
+/* ---------- */
+
+// const obj = {
+//     name: "adam",
+//     age: 18,
+//     getName:
+//         function () {
+//             console.log(this); //obj
+
+//             function standard() {
+//                 console.log(this); //undefined
+
+//                 const arrow = () => {
+//                     console.log(this) //undefined
+//                 }
+
+//                 arrow()
+//             }
+
+//             standard();
+//         }
+// };
+
+// obj.getName();
+
+//closure
+//use function to create a private scope
+
+// let counter = 0; //polluting global naming space
+
+// let increment = () => {
+//     counter++;
+//     console.log(counter);
+// }
+
+// increment();
+// increment();
+
+// function count(){
+//     let counter = 0;
+//     let increment = () => {
+//         counter++;
+//         console.log(counter);
+//     }
+//     return increment;
+// }
+
+// const increment = count();
+
+// increment();
+// increment();
+
+//iife, immediately invoked function expression
+
+// const increment = (function count(){
+//     let counter = 0;
+//     let increment = () => {
+//         counter++;
+//         console.log(counter);
+//     }
+//     return increment;
+// })()
+
+//currying
+//increment()(2)(3) //6
+
+// const increment = (() => {
+//     let counter = 0;
+//     const increment = (...args) => {
+//         args = args.length === 0?[1]:args;
+//         counter = args.reduce((acc,cur)=>{
+//             return acc+cur
+//         },counter);
+//         console.log(counter);
+//         return increment;
+//     }
+//     return increment
+
+
+// })();
+
+// increment()(2)(3);
+
+// const newArr = [1,2,3].map((item)=>{
+//     return item + 1;
+// })
+
+// console.log(newArr)
+
+// const newArr1 = [1,2,3].map((item)=>{
+//     return item + 2;
+// })
+
+//console.log(newArr1);
+
+// const incrementElement = (num) => {
+//     return (item) => {
+//         return item + num;
+//     }
+// }
+
+// const newArr = [1,2,3].map(incrementElement(1));
+// console.log(newArr)
+
+// const newArr1 = [1,2,3].map(incrementElement(2));//
+// console.log(newArr1);
+
+// callback
+
+// const arr = [1,2,3];
+// arr.forEach(item=>{
+//     console.log(item)
+// });
+
+/* 
+    Array.prototype.forEach = function(cb){
+        for(let key in this){
+            cb(this[key], key, this)
+        }
+    }
+
+*/
+
+//async programming, asynchronous
+
+// setTimeout(()=>{
+//     console.log("after 2s")
+// },2000);
+
+// const foo = () => {
+//     console.log("from foo");
+// }
+
+// const boo = () => {
+//     console.log("from boo");
+// }
+
+// const zoo = () => {
+//     console.log("from zoo");
+// }
+
+// foo();
+// setTimeout(zoo, 2000);
+// setTimeout(zoo,3000);
+// boo();
+
+//foo
+//boo
+//zoo
+
+//javascript is a single threaded language
+
+//event loop
+
+//callstack, message queue, async api(not part of js);
+
+//callstack:
+//message queue:
+//async api(from browser): 
+
+// function foo(){
+//     for(var i = 0; i < 5; i++){
+//         console.log(i)
+//     }
+// }
+// foo();
+
+// function foo() {
+//     for (var i = 0; i < 5; i++) {
+//         setTimeout(() => {
+//             console.log(i)
+//         }, i * 1000)
+
+//     }
+// }
+// foo();
+
+function foo() {
+    var i = 0
+    for (; i < 5; i++) {
+        setTimeout(() => {
+            console.log(i)
+        }, i * 1000)
+
+    }
+}
+
+// function foo (){
+//     var i  = 0;
+//     setTimeout(() => {
+//         console.log(i);//5
+//     },  0);
+//     i++;
+//     setTimeout(() => {
+//         console.log(i);//5
+//     }, 1000);
+//     i++;
+//     setTimeout(() => {
+//         console.log(i);//5
+//     }, 2000);
+//     i++;
+//     setTimeout(() => {
+//         console.log(i);//5
+//     }, 3000);
+//     i++;
+//     setTimeout(() => {
+//         console.log(i);//5
+//     }, 4000);
+//     i++; //5
+
+// }
+
+//foo();
+
+// function foo() {
+//     for (let i = 0; i < 5; i++) {  
+//         setTimeout(() => {
+//             console.log(i)
+//         }, i * 1000)
+
+//     }
+// }
+
+// foo();
+
+// function foo(){
+//     for(var i = 0; i < 5; i++){
+//         (function(){ //iife
+//             var number = i;
+//             setTimeout(()=>{
+//                 console.log(number)
+//             },number*1000);
+//         })()
+//     }
+// }
+
+// foo();
+
+//XHR request, XMLHttpRequest
+
+// var xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = function () {
+//     if (this.readyState == 4 && this.status == 200) {
+//         // Typical action to be performed when the document is ready:
+//         console.log(xhttp.responseText);
+//     }
+// };
+// xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+// xhttp.send();
+
+
+const httpRequest = (url, method, cb) => {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+            cb(xhttp.responseText);
+        }
+    };
+    xhttp.open(method, url, true);
+    xhttp.send();
+}
+
+
+
+// console.log("1");
+// httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET", (response) => { console.log(response) })
+// console.log("2");
+
+// httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET", (response) => { console.log(response) })
+
+// console.log("3");
+
+//promise
+//first request, first response, second request(first response), third request
+
+//callback hell
+// httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET", (response) => {
+    
+//     httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET",(response)=>{
+
+//         httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET",(response)=>{
+//             httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET",(response)=>{
+//                 httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET",(response)=>{
+
+//                 })
+//             })
+//         })
+//     })
+// })
+
+//promise
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+.then((res) => {
+    return res.json()
+}).then(data => console.log(data))
+.then()
+.then();//flatten pattern
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
