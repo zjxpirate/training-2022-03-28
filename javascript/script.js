@@ -1,5 +1,5 @@
 // console.log("hello world");
-"use strict"
+// "use strict"
 /* 
 primitive type
 string
@@ -759,15 +759,15 @@ symbol
 // }
 // foo();
 
-function foo() {
-    var i = 0
-    for (; i < 5; i++) {
-        setTimeout(() => {
-            console.log(i)
-        }, i * 1000)
+// function foo() {
+//     var i = 0
+//     for (; i < 5; i++) {
+//         setTimeout(() => {
+//             console.log(i)
+//         }, i * 1000)
 
-    }
-}
+//     }
+// }
 
 // function foo (){
 //     var i  = 0;
@@ -833,18 +833,18 @@ function foo() {
 // xhttp.send();
 
 
-const httpRequest = (url, method, cb) => {
+// const httpRequest = (url, method, cb) => {
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            // Typical action to be performed when the document is ready:
-            cb(xhttp.responseText);
-        }
-    };
-    xhttp.open(method, url, true);
-    xhttp.send();
-}
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState == 4 && this.status == 200) {
+//             // Typical action to be performed when the document is ready:
+//             cb(xhttp.responseText);
+//         }
+//     };
+//     xhttp.open(method, url, true);
+//     xhttp.send();
+// }
 
 
 
@@ -861,7 +861,7 @@ const httpRequest = (url, method, cb) => {
 
 //callback hell
 // httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET", (response) => {
-    
+
 //     httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET",(response)=>{
 
 //         httpRequest("https://jsonplaceholder.typicode.com/todos/1", "GET",(response)=>{
@@ -875,12 +875,347 @@ const httpRequest = (url, method, cb) => {
 // })
 
 //promise
-fetch("https://jsonplaceholder.typicode.com/todos/1")
-.then((res) => {
-    return res.json()
-}).then(data => console.log(data))
-.then()
-.then();//flatten pattern
+// fetch("https://jsonplaceholder.typicode.com/todos/1")
+// .then((res) => {
+//     return res.json()
+// }).then(data => console.log(data))
+// .then()
+// .then();//flat pattern
+
+
+
+const httpRequest = (url, method, cb) => {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+            cb(xhttp.responseText);
+        }
+    };
+    xhttp.open(method, url, true);
+    xhttp.send();
+}
+
+const url = "https://jsonplaceholder.typicode.com/todos/1";
+const method = "GET"
+// httpRequest(url,method,(response)=>{ 
+//     console.log("1st response is successful!")
+//     console.log("start making 2nd request")
+//     httpRequest(url, method, (response)=>{
+//         console.log("2nd response is successful!");
+//         console.log("start making 3rd request")
+//         httpRequest(url, method, (response)=>{
+//             console.log("3rd response is successful!");
+//             console.log("start making 4th request")
+//             httpRequest(url, method, (response)=>{
+//                 console.log("4th response is successful!");
+//                 console.log("start making 5th request")
+//                 httpRequest(url, method, (response)=>{
+//                     console.log("5th response is successful!");
+//                 })
+//             })
+//         })
+//     })
+// })
+
+
+// fetch(url)//http request with promise
+//     .then(response => response.json()
+//     ).then(data => {
+//         console.log("1st response");
+//         return fetch(url)
+//     }).then((response) => response.json()
+//     ).then(data => {
+//         console.log("2nd response");
+//         return fetch(url)
+//     }).then((response) => response.json())
+//     .then(data => {
+//         console.log("3rd response");
+//         return fetch(url)
+//     }).then((response) => response.json())
+//     .then(data => {
+//         console.log("4th response");
+//         return fetch(url)
+//     }).then((response) => response.json())
+//     .then(data => {
+//         console.log("5th response");
+//         return fetch(url)
+//     }).then((response) => response.json());
+
+
+// setTimeout(() => {
+//     setTimeout(() => {
+//         setTimeout(() => {
+//             setTimeout(() => {
+//                 setTimeout(() => {
+//                     console.log("5th settimeout")
+//                 }, 1000);
+//                 console.log("4th settimeout")
+//             }, 1000);
+//             console.log("3rd settimeout")
+//         }, 1000);
+//         console.log("2nd settimeout")
+//     }, 1000);
+//     console.log("1st settimeout")
+// }, 1000);
+
+
+// setTimeout(()=>{
+//     console.log(1)
+// },1000)
+
+// new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         resolve()
+//     },1000)
+// }).then(()=>{
+//     console.log("1st settimeout");
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve()
+//         },1000)
+//     })
+// }).then(()=>{
+//     console.log("2nd settimeout")
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve()
+//         },1000)
+//     })
+// }).then(()=>{
+//     console.log("3rd settimeout");
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve()
+//         },1000)
+//     })
+// }).then(()=>{
+//     console.log("4th settimeout");
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve()
+//         },1000)
+//     })
+// }).then(()=>{
+//     console.log("5th settimeout");
+// })
+
+//httpRequest(url, method, cb)
+
+// new Promise((resolve, reject)=>{
+//     httpRequest(url,method,(response)=>{
+//         console.log("1st response is successful!")
+//         resolve(response);
+//     })
+// }).then((response)=>{
+
+//     return new Promise((resolve,reject)=>{
+//         console.log("start making 2nd request");
+//         httpRequest(url, method, (response)=>{ 
+//            console.log("2nd response is successful!");
+//             resolve(response)
+//         })
+//     })
+// }).then((response)=>{
+//     return new Promise((resolve, reject)=>{
+//         console.log("start making 3rd request")
+//         httpRequest(url, method, (response)=>{
+//             console.log("3rd response is successful!");
+//             resolve(response)
+//         })
+//     })
+// }).then((response)=>{
+
+//     return new Promise((resolve, reject)=>{
+//         console.log("start making 4th request")
+//         httpRequest(url, method, (response)=>{
+//             console.log("4th response is successful!");
+//             resolve(response)
+//         })
+//     })
+// }).then((response)=>{
+
+//     return new Promise((resolve, reject)=>{
+//         console.log("start making 5th request")
+//         httpRequest(url, method, (response)=>{
+//             console.log("5th response is successful")
+//             resolve(response)
+//         })
+//     })
+// }).then((response)=>{
+//     console.log("this is the end!",response)
+// });
+
+
+// const promise = new Promise((resolve, reject) => {
+
+//     setTimeout(() => {
+//         reject("this is an error!") // does nothing but throwing and error for us
+//         resolve(123)
+//     }, 1000)
+
+// }).then(
+//     (response) => {
+//         console.log("1st response", response)
+//         return new Promise((resolve, reject) => {
+//             resolve(456)
+//         })             //if the return value is a instance of Promise, "then" will pass the resolved value to next "then"
+//     },
+
+//     (reason) => {
+//         console.log("this is from then function", reason);
+//         return new Promise((resolve, reject)=>{
+//             reject("new error")
+//         })
+//     }
+// ).then((response) => {
+//     console.log(response);
+//     return 789     //if the return value is not a instance of Promise, "then" will pass the value directly to next "then"
+// }).then((response) => {
+//     console.log(response);
+// }).catch((err) => {
+//     console.log("this is from catch function", err)
+// });
+
+// console.log(promise);
+
+// console.log("1. before promise")
+
+// new Promise((resolve, reject)=>{
+//     console.log("2. haven't resolved")
+//     resolve(111);
+// }).then(result=>{
+//     console.log("3. resolved",result)
+// })
+
+// console.log("4. after promise");
+
+// console.log("before") //sync
+// const promise = new Promise((resolve, reject) => {
+//     console.log("1. ")//sync
+//     setTimeout(() => {
+//         console.log("2.") //async 
+//         reject("error")
+//         resolve() //async
+//     }, 1000)
+// }).then(result => {
+//     console.log("3. ", result); //async
+//     return new Promise((resolve, reject) => {
+//         console.log("4. "); //async
+//         resolve()
+//     })
+// }).then(result => {
+//     console.log("5. ") //async
+//     return;
+// })
+//     .then(result => {
+//         console.log("6. ") //async
+//     }).catch(() => {
+
+//     });
+// console.log("after");//sync
+
+// console.log(promise)
+
+
+class MyPromise {
+    #thenCallbacksQueue;
+    #catchCallback;
+    constructor(executor) {
+        this.#thenCallbacksQueue = [];
+        const resolve = (result) => {
+            setTimeout(() => {
+                //while (this.#thenCallbacksQueue.length > 0) {
+                let previousResult = result
+                const runNextCallback = () => {
+                    if (this.#thenCallbacksQueue.length > 0) {
+                        const currentThenCb = this.#thenCallbacksQueue.shift();
+                        const currentResult = currentThenCb(previousResult);
+                        if (currentResult instanceof MyPromise) {
+                            try {
+                                currentResult.then(result => {
+                                    try {
+                                        previousResult = result;
+                                        runNextCallback();
+                                    } catch (err) {
+                                        this.#catchCallback(err)
+                                    }
+                                })
+                            } catch (error) {
+                                this.#catchCallback(error)
+                            }
+
+                        } else {
+                            try {
+                                previousResult = currentResult;
+                                runNextCallback();
+                            } catch (err) {
+                                this.#catchCallback(err)
+                            }
+                        }
+                    }
+                }
+
+                runNextCallback();
+                //}
+            })
+        }
+        const reject = (reason) => {
+            setTimeout(() => {
+                this.#catchCallback(reason);
+            })
+        }
+        executor(resolve, reject)
+    }
+    then(onFulfilled, onRejected) {//it does nothing but collecting callbacks
+        this.#thenCallbacksQueue.push(onFulfilled);
+        return this
+    }
+    catch(onRejected) {
+        this.#catchCallback = onRejected;
+        return this
+    }
+}
+
+// new MyPromise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve(123)
+//         //reject("error")
+//     }, 2000)
+// }).then((result) => {
+//     console.log(result);
+//     throw new Error("error1")
+//     return new MyPromise((resolve, reject) => {
+//         resolve(456)
+//     })
+// }).then((result) => {
+    
+//     console.log(result)
+// }).catch((err) => {
+//     console.log(err)
+// })
+console.log("before")
+new Promise((resolve, reject)=> {
+    console.log(1)
+    resolve()
+    console.log(2)
+}).then(result=>{
+    console.log(3)
+})
+console.log("after")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
