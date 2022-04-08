@@ -37,6 +37,10 @@ h3{
     padding: 20px;
     border-radius: 10px;
 }
+#pending button{
+    float: right;
+    margin: 3px;
+}
 
 #completed{
     height: 400px;
@@ -48,6 +52,17 @@ h3{
     padding: 20px;
     border-radius: 10px;
 }
+
+#completed .left{
+    float: left;
+    margin: 3px;
+}
+
+#completed .right{
+    float: right;
+    margin: 3px;
+}
+
 
 ul{
     list-style-type: none;

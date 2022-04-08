@@ -10,8 +10,8 @@
   <body onload="loadingJSON()">
 
     <div id="header">
-      <input type="text">
-      <button>Submit</button>
+      <input type="text" id="inputValue">
+      <button onclick="addTask()">Submit</button>
     </div>
 
 
@@ -21,7 +21,7 @@
       <div id="pending">
         <h3>Pending Tasks</h3>
         <ul id="pending-list">
-       
+          
         </ul>
       </div>
       
@@ -29,7 +29,7 @@
       <div id="completed">
         <h3>Completed Tasks</h3>
         <ul id="completed-list">
-        
+          
         </ul>
       </div>
 
