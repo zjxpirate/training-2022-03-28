@@ -1,8 +1,8 @@
 {
   "todos": [
     {
+      "isCompleted": false,
       "content": "Build two lists, pending list and completed list",
-      "isCompleted": true,
       "id": 3
     },
     {
@@ -14,11 +14,6 @@
       "content": "bind event handler for buttons",
       "isCompleted": true,
       "id": 5
-    },
-    {
-      "content": "there should be totally 5 http requests",
-      "isCompleted": false,
-      "id": 7
     },
     {
       "content": "Get to-do data from json server at the beginning",
@@ -36,52 +31,37 @@
       "id": 11
     },
     {
-      "content": "give some thought about the data structure",
-      "isCompleted": false,
-      "id": 12
-    },
-    {
-      "content": "what's more than the original to-do list!!!!!",
-      "isCompleted": false,
-      "id": 13
-    },
-    {
-      "content": "Make a symmetrical layout",
-      "isCompleted": false,
-      "id": 14
-    },
-    {
       "content": "Functional first, stylish second",
       "isCompleted": true,
       "id": 15
     },
     {
-      "content": "test",
+      "content": "task 1",
       "isCompleted": false,
       "id": 16
     },
     {
-      "content": "test",
+      "content": "task 2",
       "isCompleted": false,
       "id": 17
     },
     {
-      "content": "test",
+      "content": "task 3",
       "isCompleted": false,
       "id": 18
     },
     {
-      "content": "new task",
+      "content": "task 4",
       "isCompleted": false,
       "id": 19
     },
     {
-      "content": "another new task",
+      "content": "task 5",
       "isCompleted": false,
       "id": 20
     },
     {
-      "content": "last new task",
+      "content": "task 6",
       "isCompleted": false,
       "id": 21
     }
