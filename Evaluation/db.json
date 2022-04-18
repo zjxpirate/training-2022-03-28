@@ -1,13 +1,8 @@
 {
   "todos": [
     {
-      "isCompleted": false,
-      "content": "Build two lists, pending list and completed list",
-      "id": 3
-    },
-    {
-      "content": "build three buttons for each todo task",
       "isCompleted": true,
+      "content": "edit task 4",
       "id": 4
     },
     {
@@ -26,28 +21,18 @@
       "id": 9
     },
     {
-      "content": "Apply some style as you like",
       "isCompleted": true,
+      "content": "edit task 3",
       "id": 11
     },
     {
-      "content": "Functional first, stylish second",
       "isCompleted": true,
+      "content": "edit task 2",
       "id": 15
     },
     {
-      "content": "task 1",
       "isCompleted": false,
-      "id": 16
-    },
-    {
-      "content": "task 2",
-      "isCompleted": false,
-      "id": 17
-    },
-    {
-      "content": "task 3",
-      "isCompleted": false,
+      "content": "task 3 edit",
       "id": 18
     },
     {
@@ -64,6 +49,36 @@
       "content": "task 6",
       "isCompleted": false,
       "id": 21
+    },
+    {
+      "content": "new task after edit",
+      "isCompleted": false,
+      "id": 22
+    },
+    {
+      "content": "new task after edit 2",
+      "isCompleted": false,
+      "id": 23
+    },
+    {
+      "content": "see if start",
+      "isCompleted": false,
+      "id": 24
+    },
+    {
+      "isCompleted": false,
+      "content": "insert in the front edit",
+      "id": 25
+    },
+    {
+      "isCompleted": false,
+      "content": "insert first edit",
+      "id": 26
+    },
+    {
+      "content": "new task",
+      "isCompleted": false,
+      "id": 27
     }
   ]
 }
