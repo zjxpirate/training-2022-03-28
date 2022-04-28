@@ -4,6 +4,58 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+class TodoContainer extends React.Component{
+  render(){
+    return (
+      <div>
+
+      </div>
+    );
+  }
+}
+
+
+
+class TodoForm extends React.Component{
+  render(){
+    return (
+      <div>
+        
+      </div>
+    );
+  }
+}
+
+
+class TodoList extends React.Component{
+  render(){
+    return (
+      <div>
+        
+      </div>
+    );
+  }
+}
+
+
+
+
+class TodoItem extends React.Component{
+  render(){
+    return (
+      <div>
+        
+      </div>
+    );
+  }
+}
+
+
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
